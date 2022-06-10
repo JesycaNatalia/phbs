@@ -28,7 +28,7 @@ class KuisonerDataTable extends DataTable
                 $btn = '<div class="btn-group">';
                 $btn = $btn . '<a href="' . route('admin.data-kuisoner.kuisoner.edit', $row->id) . '" class="btn btn-dark buttons-edit"><i class="fas fa-edit"></i></a>';
                 $btn = $btn . '<a href="' . route('admin.data-kuisoner.kuisoner.destroy', $row->id) . '" class="btn btn-danger buttons-delete"><i class="fas fa-trash fa-fw"></i></a>';
-                $btn = $btn . '<a href="' . route('admin.data-kuisoner.isikuisoner.index', $row->id) . '" class="btn btn-warning buttons-info"><i class="fas fa-info fa-fw"></i></a>';
+                $btn = $btn . '<a href="isikuisoner" class="btn btn-warning buttons-info"><i class="fas fa-info fa-fw"></i></a>';
                 $btn = $btn . '</div>';
 
                 return $btn;
