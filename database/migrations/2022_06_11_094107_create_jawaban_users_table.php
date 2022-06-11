@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIsiKuisonersTable extends Migration
+class CreateJawabanUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateIsiKuisonersTable extends Migration
      */
     public function up()
     {
-        Schema::create('isi_kuisoners', function (Blueprint $table) {
+        Schema::create('jawaban_users', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('kuisioner_id');
-            $table->string('jawaban');
-            $table->bigInteger('skor');
-            $table->softDeletes();
+            $table->bigInteger('bulan_id');
+            $table->bigInteger('user_id');
             $table->timestamps();
 
             $table->foreign('kuisioner_id')->references('id')->on('kuisioners')->onDelete('cascade');
+            $table->foreign('bulan_id')->references('id')->on('bulans')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -32,6 +33,6 @@ class CreateIsiKuisonersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('isi_kuisoners');
+        Schema::dropIfExists('jawaban_users');
     }
 }
