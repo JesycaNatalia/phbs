@@ -68,7 +68,19 @@ return [
                     'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Pertanyaan'
                 ]
             ]
+        ], [
+            'icon' => 'fa fa-cogs',
+            'title' => 'Laporan',
+            'url' => 'javascript:;',
+            'caret' => true,
+            'sub_menu' => [
+                [
+                    'url' => '/admin/data-laporan/dataisikuisoner',
+                    'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Laporan'
+                ]
+            ]
         ]
+
     ],
 
     'menu_user' => [

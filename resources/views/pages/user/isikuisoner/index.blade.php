@@ -1,6 +1,6 @@
-@extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
+@extends('layouts.user')
 
-@section('title', 'Pengguna')
+@section('title', 'Silahkan Isi Form Kuisoner')
 
 @push('css')
 <!-- datatables -->
@@ -19,25 +19,28 @@
 </ol>
 <!-- end breadcrumb -->
 <!-- begin page-header -->
-<h1 class="page-header">Master Data<small> @yield('title')</small></h1>
+<h1 class="page-header"><small> @yield('title')</small></h1>
 <!-- end page-header -->
 
 
 <!-- begin panel -->
 <div class="panel panel-inverse">
     <!-- begin panel-heading -->
-    <div class="panel-heading">
-        <h4 class="panel-title">DataTable - @yield('title')</h4>
-        <div class="panel-heading-btn">
-            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+    <div class="card text-center">
+        <div class="card-header">
+            <STRong>FORM KUISONER</STRong>
+        </div>
+        <div class="card-body">
+            <h5 class="card-text">1. Apakah Anda memiliki anggota keluarga yang sedang hamil?</h5>
+            <p class="card-text"> </p>
+
+        </div>
+        <div class="card-footer text-muted">
+            <a href="/user/isikuisoner" class="btn btn-primary">Ya</a>
+            <a href="#" class="btn btn-primary">Tidak</a>
         </div>
     </div>
-    <!-- end panel-heading -->
-    <!-- begin panel-body -->
-    <div class="panel-body">
-        {{ $dataTable->table() }}
-    </div>
+
     <!-- end panel-body -->
 </div>
 <!-- end panel -->
@@ -46,7 +49,7 @@
 @push('scripts')
 <!-- datatables -->
 <script src="{{ asset('assets/js/custom/datatable-assets.js') }}"></script>
-{{ $dataTable->scripts() }}
+
 <!-- end datatables -->
 
 <script src="{{ asset('assets/js/custom/delete-with-confirmation.js') }}"></script>
