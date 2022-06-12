@@ -22,5 +22,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('/kuisoner', 'KuisonerController');
             Route::resource('/isikuisoner', 'IsiKuisonerController');
         });
+
+        Route::group(['prefix' => '/data-laporan', 'as' => 'data-laporan.', 'namespace' => 'Laporan'], function () {
+            Route::resource('/dataisikuisoner', 'DataIsiKuisonerController');
+        });
     });
 });

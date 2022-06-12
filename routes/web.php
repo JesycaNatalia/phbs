@@ -22,7 +22,12 @@ Route::get('/token', function () {
 Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
     Route::group(['namespace' => 'User', 'middleware' => 'auth:web'], function () {
         Route::view('/', 'home')->name('home');
+        Route::resource('/isikuisoner', 'IsiKuisonerController');
     });
+
+    // Route::group(['prefix' => '/data-ukuisoner', 'as' => 'data-ukuisoner.', 'namespace' => 'pertanyaan'], function () {
+
+    // });
 });
 
 
