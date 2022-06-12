@@ -15,8 +15,8 @@ class CreateResponUsersTable extends Migration
     {
         Schema::create('respon_users', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('bulan_id');
-            $table->bigInteger('user_id');
+            $table->bigInteger('bulan_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('total_skor');
             $table->timestamps();
 

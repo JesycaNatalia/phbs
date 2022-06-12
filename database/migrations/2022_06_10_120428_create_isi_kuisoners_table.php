@@ -15,13 +15,13 @@ class CreateIsiKuisonersTable extends Migration
     {
         Schema::create('isi_kuisoners', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('kuisioner_id');
+            $table->bigInteger('kuisoner_id')->unsigned();
             $table->string('jawaban');
             $table->bigInteger('skor');
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('kuisioner_id')->references('id')->on('kuisioners')->onDelete('cascade');
+            $table->foreign('kuisoner_id')->references('id')->on('kuisoners')->onDelete('cascade');
         });
     }
 
